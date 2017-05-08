@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginBottom="10.dp">
+        <TextView
+            android:text="Время подхода"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="50.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextApproachHour" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="50.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextApproachMin" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="50.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextApproachSec" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:layout_marginBottom="10.dp">
+        <TextView
+            android:text="Время малого отдыха"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="50.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextSmalRelaxHour" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="50.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextSmalRelaxMin" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="50.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextSmalRelaxSec" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:layout_marginBottom="10.dp">
+        <TextView
+            android:text="Количество кругов"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView3" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="50.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextCountRound" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4"
+        android:layout_marginBottom="10.dp">
+        <TextView
+            android:text="Время большого отдыха"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView4" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="50.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextBigRelaxHour" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="50.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextBigRelaxMin" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="50.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextBigRelaxSec" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5">
+        <Button
+            android:text="Установить таймер"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonSetTimeOptions" />
+    </LinearLayout>
+</LinearLayout>
