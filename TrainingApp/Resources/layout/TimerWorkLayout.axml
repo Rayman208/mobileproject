@@ -4,6 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
+        android:text="Назад"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonTimerBack" />
+    <Button
         android:text="Настроить таймер"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,8 +35,13 @@
         android:id="@+id/textViewTime"
         android:gravity="center" />
     <Button
-        android:text="старт/стоп"
+        android:text="Старт/Стоп"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonTimerStartStop" />
+    <Button
+        android:text="Сбросить таймер"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonTimerReset" />
 </LinearLayout>

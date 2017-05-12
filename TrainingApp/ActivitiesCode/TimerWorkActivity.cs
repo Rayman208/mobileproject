@@ -19,7 +19,7 @@ namespace TrainingApp
         bool isWorking;
         Timer timer;
 
-        Button btn_timerOptions, btn_timerStartStop;
+        Button btn_options, btn_startStop, btn_back, btn_reset;
         TextView tv_whatTime, tv_time, tv_round;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -37,11 +37,33 @@ namespace TrainingApp
             tv_time = FindViewById<TextView>(Resource.Id.textViewTime);
             tv_whatTime = FindViewById<TextView>(Resource.Id.textViewWhatTime);
 
-            btn_timerOptions = FindViewById<Button>(Resource.Id.buttonTimerOptions);
-            btn_timerOptions.Click += Btn_timerOptions_Click;
+            btn_options = FindViewById<Button>(Resource.Id.buttonTimerOptions);
+            btn_options.Click += Btn_timerOptions_Click;
 
-            btn_timerStartStop = FindViewById<Button>(Resource.Id.buttonTimerStartStop);
-            btn_timerStartStop.Click += Btn_timerStartStop_Click;
+            btn_startStop = FindViewById<Button>(Resource.Id.buttonTimerStartStop);
+            btn_startStop.Click += Btn_timerStartStop_Click;
+
+            btn_back = FindViewById<Button>(Resource.Id.buttonTimerBack);
+            btn_back.Click += Btn_back_Click;
+
+            btn_reset = FindViewById<Button>(Resource.Id.buttonTimerReset);
+            btn_reset.Click += Btn_reset_Click;
+        }
+
+        private void Btn_reset_Click(object sender, EventArgs e)
+        {
+            TimeCounter.TimeSing = WhatsTime.Nothing;
+            tv_time.Text = "Время";
+            tv_whatTime.Text = "Период";
+            tv_round.Text = "Осталось кругов: ";
+
+            timer.Stop();
+            isWorking = false;
+        }
+
+        private void Btn_back_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -108,12 +130,14 @@ namespace TrainingApp
                     else
                     {
                         timer.Stop();
+                        isWorking = false;
+                        TimeCounter.TimeSing = WhatsTime.Nothing;
                         RunOnUiThread(() =>
                         {
                             Toast.MakeText(this, "ЗАКОНЧЕН СЕТ", ToastLength.Long).Show();
 
                             tv_time.Text = "Время";
-                            tv_whatTime.Text = "ПЕРИОД";
+                            tv_whatTime.Text = "Период";
                             tv_round.Text = "Осталось кругов: ";
                         });
                     }
@@ -123,6 +147,12 @@ namespace TrainingApp
 
         private void Btn_timerStartStop_Click(object sender, EventArgs e)
         {
+            if (TimeCounter.TimeSing == WhatsTime.Nothing)
+            {
+                Toast.MakeText(this, "Вначале, настройте таймер", ToastLength.Long).Show();
+                return;
+            }
+
             if (isWorking == false)
             {
                 isWorking = true;

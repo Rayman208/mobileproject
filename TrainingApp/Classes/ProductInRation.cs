@@ -12,9 +12,9 @@ using Android.Widget;
 
 namespace TrainingApp
 {
-    static class Global
+    class ProductInRation
     {
-        public static Profile ChooseProfile { set; get; }
-        public static ProductsInRation PiR { set; get; }
+        public Product Product { set; get; }
+        public double Weight { set; get; }
     }
 }

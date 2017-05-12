@@ -15,7 +15,8 @@ namespace TrainingApp
     [Activity(Label = "TimerOptionsActivity")]
     public class TimerOptionsActivity : Activity
     {
-        Button btn_setTimerOptions;
+        Button btn_set, btn_back;
+
         EditText et_approachHour, et_approachMin, et_approachSec;
         EditText et_smalRelaxHour, et_smalRelaxMin, et_smalRelaxSec;
         EditText et_bigRelaxHour, et_bigRelaxMin, et_bigRelaxSec;
@@ -26,9 +27,11 @@ namespace TrainingApp
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.TimerOptionsLayout);
 
-            btn_setTimerOptions = FindViewById<Button>(Resource.Id.buttonSetTimeOptions);
+            btn_set = FindViewById<Button>(Resource.Id.buttonSetTimeOptions);
+            btn_set.Click += Btn_setTimerOptions_Click;
 
-            btn_setTimerOptions.Click += Btn_setTimerOptions_Click;
+            btn_back = FindViewById<Button>(Resource.Id.buttonTimeOptionsBack);
+            btn_back.Click += Btn_back_Click;
 
             et_approachHour = FindViewById<EditText>(Resource.Id.editTextApproachHour);
             et_approachMin = FindViewById<EditText>(Resource.Id.editTextApproachMin);
@@ -49,29 +52,41 @@ namespace TrainingApp
             TimeCounter.BigRelaxTime = new TimeValues();
         }
 
+        private void Btn_back_Click(object sender, EventArgs e)
+        {
+            Finish();
+        }
+
         private void Btn_setTimerOptions_Click(object sender, EventArgs e)
         {
-            TimeCounter.ApproachTime.SetTime
-                (int.Parse(et_approachHour.Text),
-                    int.Parse(et_approachMin.Text),
-                    int.Parse(et_approachSec.Text));
+            try
+            {
+                TimeCounter.ApproachTime.SetTime
+                    (int.Parse(et_approachHour.Text),
+                        int.Parse(et_approachMin.Text),
+                        int.Parse(et_approachSec.Text));
 
-            TimeCounter.SmallRelaxTime.SetTime
-                (int.Parse(et_smalRelaxHour.Text),
-                    int.Parse(et_smalRelaxMin.Text),
-                    int.Parse(et_smalRelaxSec.Text));
+                TimeCounter.SmallRelaxTime.SetTime
+                    (int.Parse(et_smalRelaxHour.Text),
+                        int.Parse(et_smalRelaxMin.Text),
+                        int.Parse(et_smalRelaxSec.Text));
 
 
-            TimeCounter.BigRelaxTime.SetTime
-                (int.Parse(et_bigRelaxHour.Text),
-                    int.Parse(et_bigRelaxMin.Text),
-                    int.Parse(et_bigRelaxSec.Text));
+                TimeCounter.BigRelaxTime.SetTime
+                    (int.Parse(et_bigRelaxHour.Text),
+                        int.Parse(et_bigRelaxMin.Text),
+                        int.Parse(et_bigRelaxSec.Text));
 
-            TimeCounter.CountRound = int.Parse(et_countRound.Text);
+                TimeCounter.CountRound = int.Parse(et_countRound.Text);
 
-            TimeCounter.TimeSing = WhatsTime.ApproachTime;
+                TimeCounter.TimeSing = WhatsTime.ApproachTime;
 
-            Finish();
+                Finish();
+            }
+            catch
+            {
+                Toast.MakeText(this, "Неудача. Попробуйте снова", ToastLength.Short).Show();
+            }
         }
     }
 }

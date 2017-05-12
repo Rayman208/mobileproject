@@ -80,6 +80,12 @@ namespace TrainingApp
 
         private void Btn_startWork_Click(object sender, EventArgs e)
         {
+            //if (Global.ChooseProfile==null)
+            //{
+            //    Toast.MakeText(this, "Вначале, выберите или создайте профиль", ToastLength.Long).Show();
+            //    return;
+            //}
+
             Intent intent = new Intent(this, typeof(SelectorActivity));
             StartActivity(intent);
         }

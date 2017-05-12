@@ -3,6 +3,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <Button
+        android:text="Выход"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonExit"
+        android:layout_marginBottom="30dp" />
     <TextView
         android:text="Карманный тренер"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -17,7 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
         android:gravity="center"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="40dp" />
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,11 +39,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonStartWork"
-        android:layout_marginTop="30dp" />
-    <Button
-        android:text="Выход"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonExit"
         android:layout_marginTop="30dp" />
 </LinearLayout>

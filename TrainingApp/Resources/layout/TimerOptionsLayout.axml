@@ -5,6 +5,11 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
+    <Button
+        android:text="Назад"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonTimeOptionsBack" />
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -14,26 +19,32 @@
         android:id="@+id/linearLayout1"
         android:layout_marginBottom="10.dp">
         <TextView
-            android:text="Время подхода"
+            android:text="Время подхода        "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/textView1" />
         <EditText
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/editTextApproachHour" />
+            android:id="@+id/editTextApproachHour"
+            android:numeric="integer"
+            android:hint="чч" />
         <EditText
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/editTextApproachMin" />
+            android:id="@+id/editTextApproachMin"
+            android:numeric="integer"
+            android:hint="мм" />
         <EditText
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/editTextApproachSec" />
+            android:id="@+id/editTextApproachSec"
+            android:hint="сс"
+            android:numeric="integer" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -44,26 +55,32 @@
         android:id="@+id/linearLayout2"
         android:layout_marginBottom="10.dp">
         <TextView
-            android:text="Время малого отдыха"
+            android:text="Время мал. отдыха"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/textView2" />
         <EditText
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/editTextSmalRelaxHour" />
+            android:id="@+id/editTextSmalRelaxHour"
+            android:hint="чч"
+            android:numeric="integer" />
         <EditText
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/editTextSmalRelaxMin" />
+            android:id="@+id/editTextSmalRelaxMin"
+            android:hint="мм"
+            android:numeric="integer" />
         <EditText
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/editTextSmalRelaxSec" />
+            android:id="@+id/editTextSmalRelaxSec"
+            android:hint="сс"
+            android:numeric="integer" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -80,10 +97,11 @@
             android:layout_height="match_parent"
             android:id="@+id/textView3" />
         <EditText
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/editTextCountRound" />
+            android:id="@+id/editTextCountRound"
+            android:numeric="integer" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -94,26 +112,32 @@
         android:id="@+id/linearLayout4"
         android:layout_marginBottom="10.dp">
         <TextView
-            android:text="Время большого отдыха"
+            android:text="Время бол. отдыха"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/textView4" />
         <EditText
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/editTextBigRelaxHour" />
+            android:id="@+id/editTextBigRelaxHour"
+            android:hint="чч"
+            android:numeric="integer" />
         <EditText
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/editTextBigRelaxMin" />
+            android:id="@+id/editTextBigRelaxMin"
+            android:hint="мм"
+            android:numeric="integer" />
         <EditText
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/editTextBigRelaxSec" />
+            android:id="@+id/editTextBigRelaxSec"
+            android:hint="сс"
+            android:numeric="integer" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"

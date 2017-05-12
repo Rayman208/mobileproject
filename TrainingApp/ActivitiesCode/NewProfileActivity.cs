@@ -15,25 +15,12 @@ namespace TrainingApp
     [Activity(Label = "NewProfileActivity")]
     public class NewProfileActivity : Activity
     {
-        EditText et_title,
-                 et_height,
-                 et_weight,
-                 et_age,
-                 et_countTrainings;
-
-        RadioButton rb_man,
-                    rb_woman,
-                    rb_loss,
-                    rb_gain;
-
-        Button btn_add,
-               btn_back,
-               btn_edit,
-               btn_delete;
+        EditText et_title, et_height, et_weight, et_age, et_countTrainings;
+        RadioButton rb_man, rb_woman, rb_loss, rb_gain;
+        Button btn_add, btn_back, btn_edit, btn_delete;
 
         DBTableProfiles tableProfiles;
         
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -64,6 +51,7 @@ namespace TrainingApp
 
             tableProfiles = new DBTableProfiles();
             tableProfiles.CreateTable();
+
         }
 
         private void Btn_delete_Click(object sender, EventArgs e)
