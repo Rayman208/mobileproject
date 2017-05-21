@@ -51,7 +51,6 @@ namespace TrainingApp
 
             tableProfiles = new DBTableProfiles();
             tableProfiles.CreateTable();
-
         }
 
         private void Btn_delete_Click(object sender, EventArgs e)
@@ -66,6 +65,7 @@ namespace TrainingApp
             if (result == true)
             {
                 Toast.MakeText(this, "Успешно удалено. Вернитесь назад", ToastLength.Short).Show();
+                Global.ChooseProfile = null;
             }
             else
             {

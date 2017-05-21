@@ -21,6 +21,7 @@ namespace TrainingApp
         {
             try
             {
+                //using чтобы закрыть соединение сразу после выхода из блока using
                 using (SQLiteConnection connection = new SQLiteConnection(Path.Combine(folder, dbName)))
                 {
                     connection.CreateTable<Product>();
@@ -111,7 +112,7 @@ namespace TrainingApp
                 using (SQLiteConnection connection = new SQLiteConnection(Path.Combine(folder, dbName)))
                 {
                     Product product = (Product)entity;
-                    connection.Query<Product>("UPDATE Product set Name=?,Proteins=?,Fats=?,Carbohydrates=?,Callas=? Where Id=?", product.Title, product.Proteins, product.Fats, product.Carbohydrates, product.Callas, product.Id);
+                    connection.Query<Product>("UPDATE Product set Title=?,Proteins=?,Fats=?,Carbohydrates=?,Callas=? Where Id=?", product.Title, product.Proteins, product.Fats, product.Carbohydrates, product.Callas, product.Id);
                     return true;
                 }
             }

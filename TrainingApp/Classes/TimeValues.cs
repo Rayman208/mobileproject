@@ -12,21 +12,20 @@ using Android.Widget;
 
 namespace TrainingApp
 {
+    //класс для единицы времени 
     class TimeValues
     {
-        private int m_totalsec;
-        private int m_saveTotalsec;
-
-        public TimeValues(int hour=0, int min=0, int sec=0)
-        {
-            m_totalsec = sec + min * 60 + hour * 3600;
-            m_saveTotalsec = m_totalsec;
-        }
+        private int m_totalsec;//текщуие секунды
+        private int m_saveTotalsec;//для восстановления времени
+        
+        //функция установки времени
         public void SetTime(int hour = 0, int min = 0, int sec = 0)
         {
+            //всё превращаем в секунды
             m_totalsec = sec + min * 60 + hour * 3600;
             m_saveTotalsec = m_totalsec;
         }
+        //восстановить время
         public void ReturnTime()
         {
             m_totalsec = m_saveTotalsec;
@@ -45,7 +44,7 @@ namespace TrainingApp
         }
         public int GetMin()
         {
-            return m_totalsec / 60;
+            return (m_totalsec / 60) % 60;
         }
         public int GetHour()
         {

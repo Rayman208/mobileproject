@@ -12,14 +12,15 @@ using Android.Widget;
 
 namespace TrainingApp
 {
+    //варианты периодов таймера
     enum WhatsTime { ApproachTime, SmallRelaxTime, BigRelaxTime, Nothing };
 
     static class TimeCounter
     {
-        public static TimeValues ApproachTime { set; get; }
-        public static TimeValues SmallRelaxTime { set; get; }
-        public static TimeValues BigRelaxTime { set; get; }
-        public static int CountRound { set; get; }
-        public static WhatsTime TimeSing { set; get; }
+        public static TimeValues ApproachTime { set; get; }//время подхода
+        public static TimeValues SmallRelaxTime { set; get; }//малый отдых
+        public static TimeValues BigRelaxTime { set; get; }//большой отдых
+        public static int CountRound { set; get; }//кол-во кругов
+        public static WhatsTime TimeSing { set; get; }//какой сейчас период таймера
     }
 }

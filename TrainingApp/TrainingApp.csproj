@@ -82,7 +82,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivitiesCode\NewProductActivity.cs" />
-    <Compile Include="ActivitiesCode\ChooseProductActivity.cs" />
     <Compile Include="ActivitiesCode\MainActivity.cs" />
     <Compile Include="ActivitiesCode\NewProfileActivity.cs" />
     <Compile Include="ActivitiesCode\RationActivity.cs" />
@@ -92,17 +91,19 @@
     <Compile Include="Classes\DBHelper.cs" />
     <Compile Include="Classes\DBTableProducts.cs" />
     <Compile Include="Classes\DBTableProfiles.cs" />
+    <Compile Include="Classes\DBTableTimerParams.cs" />
     <Compile Include="Classes\Global.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\ProductInRation.cs" />
-    <Compile Include="Classes\ProductsInRation.cs" />
     <Compile Include="Classes\Profile.cs" />
     <Compile Include="Classes\TimeCounter.cs" />
+    <Compile Include="Classes\TimerParams.cs" />
     <Compile Include="Classes\TimeValues.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
@@ -123,9 +124,6 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\NewProductLayout.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\ChooseProductLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

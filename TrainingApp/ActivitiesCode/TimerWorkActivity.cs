@@ -55,7 +55,7 @@ namespace TrainingApp
             TimeCounter.TimeSing = WhatsTime.Nothing;
             tv_time.Text = "Время";
             tv_whatTime.Text = "Период";
-            tv_round.Text = "Осталось кругов: ";
+            tv_round.Text = "Осталось кругов";
 
             timer.Stop();
             isWorking = false;
@@ -74,7 +74,7 @@ namespace TrainingApp
                     if (TimeCounter.ApproachTime.GetTotalsec() > 0)
                     {
                         TimeCounter.ApproachTime.Tick();
-
+                        
                         RunOnUiThread(() =>
                         {
                             tv_time.Text = TimeCounter.ApproachTime.GetTimeString();
@@ -138,7 +138,7 @@ namespace TrainingApp
 
                             tv_time.Text = "Время";
                             tv_whatTime.Text = "Период";
-                            tv_round.Text = "Осталось кругов: ";
+                            tv_round.Text = "Осталось кругов";
                         });
                     }
                     break;
@@ -167,8 +167,12 @@ namespace TrainingApp
 
         private void Btn_timerOptions_Click(object sender, EventArgs e)
         {
+            //намерение 
             Intent intent = new Intent(this, typeof(TimerOptionsActivity));
-            StartActivity(intent);
+            //this - кто является родителем вызываемого активити
+            //typeof(TimerOptionsActivity) - какое активити мы вызываем
+
+            StartActivity(intent);//запуск намерения
         }
     }
 }

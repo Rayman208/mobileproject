@@ -108,4 +108,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonNewProductAdd" />
+  <Button
+        android:text="Редактировать выбранный"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonNewProductEdit" />
+  <Button
+      android:text="Удалить выбранный"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/buttonNewProductDelete" />
 </LinearLayout>

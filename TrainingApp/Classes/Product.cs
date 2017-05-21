@@ -26,7 +26,7 @@ namespace TrainingApp
 
         public override string ToString()
         {
-            return String.Format("Id={0}\nНазвание={1}\nБелки={2}\nЖиры={3}\nУглеводы={4}\nКаллории={5}", Id, Title, Proteins, Fats, Carbohydrates, Callas);
+            return String.Format("Название={0}\nБелки={1}\nЖиры={2}\nУглеводы={3}\nКаллории={4}",Title, Proteins, Fats, Carbohydrates, Callas);
         }
     }
 }

@@ -9,14 +9,13 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-
 using SQLite;
 
 using System.IO;
 
 namespace TrainingApp
 {
-    class DBTableProfiles : DBHelper
+    class DBTableTimerParams:DBHelper
     {
         public override bool CreateTable()
         {
@@ -24,7 +23,7 @@ namespace TrainingApp
             {
                 using (SQLiteConnection connection = new SQLiteConnection(Path.Combine(folder, dbName)))
                 {
-                    connection.CreateTable<Profile>();
+                    connection.CreateTable<TimerParams>();
                     return true;
                 }
             }
@@ -39,8 +38,8 @@ namespace TrainingApp
             {
                 using (SQLiteConnection connection = new SQLiteConnection(Path.Combine(folder, dbName)))
                 {
-                    Profile profile = (Profile)entity;
-                    connection.Delete(profile);
+                    TimerParams timerParams = (TimerParams)entity;
+                    connection.Delete(timerParams);
                     return true;
                 }
             }
@@ -54,9 +53,9 @@ namespace TrainingApp
         {
             try
             {
-               using (SQLiteConnection connection = new SQLiteConnection(Path.Combine(folder, dbName)))
+                using (SQLiteConnection connection = new SQLiteConnection(Path.Combine(folder, dbName)))
                 {
-                    connection.Insert((Profile)entity);
+                    connection.Insert((TimerParams)entity);
                     return true;
                 }
             }
@@ -73,13 +72,13 @@ namespace TrainingApp
                 using (SQLiteConnection connection = new SQLiteConnection(Path.Combine(folder, dbName)))
                 {
                     List<string> stringList = new List<string>();
-                    List<Profile> profiles = connection.Table<Profile>().ToList();
+                    List<TimerParams> listTimerParams = connection.Table<TimerParams>().ToList();
 
-                    foreach (Profile profile in profiles)
+                    foreach (TimerParams timerParams in listTimerParams)
                     {
-                        string currentProfile = String.Format("{0}", profile.Title);
+                        string currentTimerParams = String.Format("{0}", timerParams.NameParams);
 
-                        stringList.Add(currentProfile);
+                        stringList.Add(currentTimerParams);
                     }
                     return stringList;
                 }
@@ -90,13 +89,13 @@ namespace TrainingApp
             }
         }
 
-        public Profile GetProfileByIndex(int index)
+        public TimerParams GetTimerParamsByIndex(int index)
         {
             try
             {
                 using (SQLiteConnection connection = new SQLiteConnection(Path.Combine(folder, dbName)))
                 {
-                    return connection.Table<Profile>().ToList()[index];
+                    return connection.Table<TimerParams>().ToList()[index];
                 }
             }
             catch (SQLiteException ex)
@@ -107,19 +106,7 @@ namespace TrainingApp
 
         public override bool UpdateEntity(object entity)
         {
-            try
-            {
-                using (SQLiteConnection connection = new SQLiteConnection(Path.Combine(folder, dbName)))
-                {
-                    Profile profile = (Profile)entity;
-                    connection.Query<Profile>("UPDATE Profile set Title=?,Height=?,Weight=?,Age=?,Sex=?,Purpose=?,CountTrainings=? Where Id=?", profile.Title, profile.Height, profile.Weight, profile.Age, profile.Sex, profile.Purpose, profile.CountTrainings, profile.Id);
-                    return true;
-                }
-             }
-            catch (SQLiteException ex)
-            {
-                return false;
-            }
+            return false;
         }
     }
 }

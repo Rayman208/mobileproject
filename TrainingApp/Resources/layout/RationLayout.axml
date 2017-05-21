@@ -5,11 +5,17 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <Button
-        android:text="Назад"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonRationBack" />
+        android:id="@+id/linearLayout4">
+        <Button
+            android:text="Назад"
+            android:id="@+id/buttonRationBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -213,12 +219,40 @@
                 android:id="@+id/textViewRationCallsIs" />
         </LinearLayout>
     </LinearLayout>
-    <Button
-        android:text="Добавить продукт"
+    <TextView
+        android:text="Продукт"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonRationAddProduct"
-        android:layout_marginTop="10dp" />
+        android:id="@+id/textView1"
+        android:gravity="center" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerChooseSelectProduct" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:text="Вес(г)"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextChooseProductWeight" />
+    </LinearLayout>
+    <Button
+        android:text="Добавить в список выбранных"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonChooseSelectedProduct" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

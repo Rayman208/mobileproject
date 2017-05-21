@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace TrainingApp
 {
-    [Activity(Label = "SelectorActivity"/*, MainLauncher = true*/)]
+    [Activity(Label = "SelectorActivity")]
     public class SelectorActivity : Activity
     {
         Button btn_openRation, btn_openTrainingDiary, btn_openTimer, btn_selectorBack;
@@ -36,6 +36,8 @@ namespace TrainingApp
 
         private void Btn_openRation_Click(object sender, EventArgs e)
         {
+            Global.ProductsInRation = new List<ProductInRation>();
+
             Intent intent = new Intent(this, typeof(RationActivity));
             StartActivity(intent);
         }
@@ -47,6 +49,7 @@ namespace TrainingApp
 
         private void Btn_openTimer_Click(object sender, EventArgs e)
         {
+            //установить таймер в не рабочее состояние
             TimeCounter.TimeSing = WhatsTime.Nothing;
 
             Intent intent = new Intent(this, typeof(TimerWorkActivity));

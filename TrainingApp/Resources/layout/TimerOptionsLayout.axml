@@ -30,21 +30,24 @@
             android:layout_height="match_parent"
             android:id="@+id/editTextApproachHour"
             android:numeric="integer"
-            android:hint="чч" />
+            android:hint="чч"
+            android:text="0" />
         <EditText
             android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
             android:id="@+id/editTextApproachMin"
             android:numeric="integer"
-            android:hint="мм" />
+            android:hint="мм"
+            android:text="0" />
         <EditText
             android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
             android:id="@+id/editTextApproachSec"
             android:hint="сс"
-            android:numeric="integer" />
+            android:numeric="integer"
+            android:text="0" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -66,21 +69,24 @@
             android:layout_height="match_parent"
             android:id="@+id/editTextSmalRelaxHour"
             android:hint="чч"
-            android:numeric="integer" />
+            android:numeric="integer"
+            android:text="0" />
         <EditText
             android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
             android:id="@+id/editTextSmalRelaxMin"
             android:hint="мм"
-            android:numeric="integer" />
+            android:numeric="integer"
+            android:text="0" />
         <EditText
             android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
             android:id="@+id/editTextSmalRelaxSec"
             android:hint="сс"
-            android:numeric="integer" />
+            android:numeric="integer"
+            android:text="0" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -123,21 +129,24 @@
             android:layout_height="match_parent"
             android:id="@+id/editTextBigRelaxHour"
             android:hint="чч"
-            android:numeric="integer" />
+            android:numeric="integer"
+            android:text="0" />
         <EditText
             android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
             android:id="@+id/editTextBigRelaxMin"
             android:hint="мм"
-            android:numeric="integer" />
+            android:numeric="integer"
+            android:text="0" />
         <EditText
             android:inputType="numberSigned"
             android:layout_width="50.0dp"
             android:layout_height="match_parent"
             android:id="@+id/editTextBigRelaxSec"
             android:hint="сс"
-            android:numeric="integer" />
+            android:numeric="integer"
+            android:text="0" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -152,4 +161,46 @@
             android:layout_height="match_parent"
             android:id="@+id/buttonSetTimeOptions" />
     </LinearLayout>
+    <Button
+        android:text="Очистить поля ввода"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonTimeOptionsClear" />
+    <TextView
+        android:text="Запомненные параметры"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:gravity="center" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerTimeOptionsTimerParams" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout6">
+        <TextView
+            android:text="Название набора параметров"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView6" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextTimeOptionsNameParams" />
+    </LinearLayout>
+    <Button
+        android:text="Запомнить текущие парметры"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonTimeOptionsAdd" />
+    <Button
+        android:text="Удалить текущие параметры"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonTimeOptionsDelete" />
 </LinearLayout>
